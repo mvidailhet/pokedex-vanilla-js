@@ -1,0 +1,259 @@
+body {
+  background-color: #ffbd6e;
+  margin: 0;
+}
+
+.btn {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  border: none;
+  background-color: #0079b3;
+  color: white;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: background-color ease-in 100ms;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #53c7fc;
+}
+
+.btn-fetch {
+  margin: 32px;
+}
+
+.btn-fetch-error {
+  background-color: #d32f2f;
+}
+
+.btn-fetch-error:hover {
+  background-color: #d84f4f;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.centered-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pokemon-list-container {
+  height: 100vh;
+  overflow: auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.pokemon-list li {
+  background-color: white;
+  border: 1px solid #b07228;
+  font-size: 1.8rem;
+  padding: 2rem;
+}
+
+ul.pokemon-list li:hover,
+ul.pokemon-list li.selected:hover {
+  background-color: #ffbd6e;
+  cursor: pointer;
+}
+
+ul.pokemon-list li.selected {
+  background-color: #c49153;
+}
+
+.pokemons-page {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+}
+
+.pokemon-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+
+.pokemon-details {
+  background-color: white;
+  border-radius: 5px;
+  border: 5px solid #b07228;
+  min-width: 500px;
+  font-size: 1.4rem;
+}
+
+.pokemon-details-header {
+  text-align: center;
+}
+
+.pokemons-details-title {
+  margin-bottom: 16px;
+}
+
+.pokemons-details-title h1, .pokemons-details-title-number {
+  text-align: center;
+}
+
+.pokemons-details-title-number {
+  color: #333;
+}
+
+.pokemons-details-title h1 {
+  margin-bottom: 16px;
+}
+
+.pokemon-details-content {
+  padding: 16px;
+}
+
+.pokemon-type {
+  border-radius: 5px;
+  padding: 4px 32px;
+  color: white;
+  background-color: lightgrey;
+  display: inline-block;
+  margin: 4px;
+}
+
+.pokemon-type-poison {
+  background-color: #b97fc9;
+}
+
+.pokemon-type-grass {
+  background-color: #9bcc50;
+}
+
+.pokemon-type-fire {
+  background-color: #fd7d24;
+}
+
+.pokemon-type-ice {
+  background-color: #51c4e7;
+}
+
+.pokemon-type-water {
+  background-color: #4592c4;
+}
+
+.pokemon-type-rock {
+  background-color: #a38c21;
+}
+
+.pokemon-image {
+  width: 200px;
+}
+
+.toast-notification {
+  position: fixed;
+  bottom: -150px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #343434;
+  color: white;
+  transition: transform ease-out 500ms;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.toast-notification.show {
+  /**
+  * Rappel : essayer de toujours animer les éléments avec transform pour des animations fluides
+  */
+  transform: translateY(-150px);
+}
+
+.main-loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #222;
+  opacity: 0.8;
+  transition: opacity ease-in-out 500ms;
+}
+
+/**
+* Le code suivant est copié d'un site proposant des loaders CSS : https://projects.lukehaas.me/css-loaders/
+* Rappel : le travail d'un développeur c'est aussi savoir gagner du temps en utilisant le travail des autres pour arriver à notre objectif final
+**/
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+}
+.loader {
+  color: #ffffff;
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: 0 auto;
+  width: 10em;
+  height: 10em;
+  box-shadow: inset 0 0 0 1em;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  content: "";
+}
+.loader:before {
+  width: 5.2em;
+  height: 10.2em;
+  background: #ffbd6e;
+  border-radius: 10.2em 0 0 10.2em;
+  top: -0.1em;
+  left: -0.1em;
+  -webkit-transform-origin: 5.1em 5.1em;
+  transform-origin: 5.1em 5.1em;
+  animation: load2 1s infinite ease 1.5s;
+}
+.loader:after {
+  width: 5.2em;
+  height: 10.2em;
+  background: #ffbd6e;
+  border-radius: 0 10.2em 10.2em 0;
+  top: -0.1em;
+  left: 4.9em;
+  -webkit-transform-origin: 0.1em 5.1em;
+  transform-origin: 0.1em 5.1em;
+  animation: load2 1s infinite ease;
+}
+@-webkit-keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

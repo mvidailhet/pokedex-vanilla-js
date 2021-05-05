@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pokemon API vanilla JS</title>
+  </head>
+  <body>
+    <div class="centered-element">
+      <button class="btn btn-fetch">Fetch pokemons</button>
+
+      <button class="btn btn-fetch-error">Fetch with API error</button>
+    </div>
+
+    <div class="loader centered-element hidden"></div>
+
+    <div class="pokemons-page hidden">
+      <div class="pokemon-list-container">
+        <ul class="pokemon-list"></ul>
+      </div>
+      <div class="pokemon-details-container">
+        <div class="pokemon-details hidden">
+          <div class="pokemon-details-header">
+            <div class="pokemons-details-title">
+              <h1 class="pokemon-name">Bulbasaur</h1>
+              <div class="pokemons-details-title-number">
+                n°<span class="pokemon-number">1</span>
+              </div>
+            </div>
+            <img class="pokemon-image" />
+          </div>
+          <div class="pokemon-details-content">
+            <h2>Types</h2>
+            <ul class="pokemon-types">
+              <li class="pokemon-type pokemon-type-poison">Poison</li>
+              <li class="pokemon-type pokemon-type-grass">Grass</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-notification"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
